@@ -1,1 +1,37 @@
-#DOCTYPE HTML
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Hello World</title>
+        <meta charset="utf-8"/>
+        <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css"/> <!--CSS styleshet imported-->
+        <script defer src="https://pyscript.net/latest/pyscript.js"></script>  <!--Used to import javascript to have pyscript code work in HTML -->
+    </head>
+    <body>
+        <nav class="navbar" style="background-color: #000000;">
+            <div class="app-header">
+                <a class="title" href="" style="color: #f0ab3c">Hello World</a> <!--Decorative Nav Bar just displaying the name of the program not linking to anything-->
+            </div>
+        </nav>
+
+        <div>Press the button to print hello world</div>
+        <button id="get-time" py-click="my_gen_function()" class="py-button">Generate</button>
+
+        <p id="current-val"></p>
+        <div id="test-output"></div>
+
+        <section class="pyscript"> <!--Entire pyScript code is within this section-->
+            <div id="mpl"></div>
+
+                <py-config> <!--Used for adding packages-->
+                    packages = []
+                    plugins = ["https://pyscript.net/latest/plugins/python/py_tutor.py"]
+                </py-config>
+
+                <script type="py"> 
+                    def my_gen_function():
+                        ## Element('test-output').element.innerText = text
+                        Element('mpl').element.innerText = "Hello World"
+                </script>
+        </section>
+    </body>
+</html>
