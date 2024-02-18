@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>KNN Mini Project</title>
+    <meta charset="utf-8"/>
+    <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css"/>
+    <script defer src="https://pyscript.net/latest/pyscript.js"></script>
+</head>
+
+<body style="background-color: #FFFDD3;">
+    <div style="text-align: center; margin-bottom: 50px;">
+        <h1>Mini Project 1: KNN</h1>
+        <p>In this Mini Project, I have chosen 58 different images of video game controllers, all ranging from 1972 - 2023. I extracted the data from the images and seperated them into features.<br>
+            Using the KNN algorithm, by entering values into the following textboxes, a controller type will be predicted: console controllers, joystick controllers, or handhelds.
+        </p>
+    </div>
+    <div><strong>Type features for your controller and then press the button (view the guide below for help):</strong></div>
+    <table>
+        <tr>
+            <td>Number of Buttons</td>
+            <td><input type="text" style="border: 3px solid #4A3728;" value="" id="testInput1"/></td>
+            <td>Brand</td>
+            <td><input type="text" style="border: 3px solid #4A3728;" value="" id="testInput2"/></td>
+            <td>Number of Joysticks</td>
+            <td><input type="text" style="border: 3px solid #4A3728;" value="" id="testInput3"/></td>
+            <td>Handles</td>
+            <td><input type="text" style="border: 3px solid #4A3728;" value="" id="testInput4"/></td>
+        </tr>
+        <tr>
+            <td>Dominant Color</td>
+            <td><input type="text" style="border: 3px solid #4A3728;" value="" id="testInput5"/></td>
+            <td>Main Shape</td>
+            <td><input type="text" style="border: 3px solid #4A3728;" value="" id="testInput6"/></td>
+            <td>Connectivity</td>
+            <td><input type="text" style="border: 3px solid #4A3728;" value="" id="testInput7"/></td>
+        </tr>
+    </table>
+
+    <button id="get-time" py-click="my_gen_function()" class="py-button" style="text-align: center;">Generate</button>
+    <div id="test-output"></div>
+
+    <section class="pyscript">
+        <div id="mpl"></div>
+
+        <py-config>
+            packages = ["pandas", "matplotlib", "numpy"]
+            plugins = []
+        </py-config>
+
+        <script type="py">
+            import numpy as np
+            import pandas as pd
+            import matplotlib.pyplot as plt
+            import matplotlib.tri as tri
+            from pyodide.http import open_url
+
+            def euclidean_distance(v1, v2):
+                return np.sqrt(np.sum((v1-v2)**2))
+
+            def predict(test_x):
+                k = 5
+                distances = [euclidean_distance(test_x, x) for x in X_train]
+                k_neighbor_indices = np.argsort(distances)[:k]
+                labels = [y_train[i] for i in k_neighbor_indices]
+                labels_np = np.array(labels)
+                pred = int(np.mean(labels_np))
+                return pred
+
+            def get_np_conditions_vector():
+                c1 = int(Element('testInput1').element.value)
+                c2 = int(Element('testInput2').element.value)
+                c3 = int(Element('testInput3').element.value)
+                c4 = int(Element('testInput4').element.value)
+                c5 = int(Element('testInput5').element.value)
+                c6 = int(Element('testInput6').element.value)
+                c7 = int(Element('testInput7').element.value)
+
+                conditions_list = [c1, c2, c3, c4, c5, c6, c7]
+                np_conditions_list = np.array(conditions_list)
+                np_conditions_list = np.expand_dims(np_conditions_list, axis=0)
+                return np_conditions_list
+
+            def preprocess_data(df):
+                # Replace categorical values with numerical values
+                df['Brand'] = df['Brand'].replace({'Atari':1, 'Atmark':2 , 'Colecovision':3, 'Commodore':4, 'Famicom':5, 'Magnavox':6, 'Mattel Electronics':7, 'NEC':8, 'Nintendo':9, 'Ouya':10, 'Panasonic':11, 'Philips':12, 'PlayStation':13, 'RCA':14, 'Samsung':15, 'Sega':16, 'SNK':17, 'Xbox':18})
+                df['Handles'] = df['Handles'].replace({'No':0, 'Yes':1})
+                df['dominantColor'] = df['dominantColor'].replace({'Beige':1, 'Black':2, 'Brown':3, 'Grey':4, 'Purple':5, 'Red':6, 'Red/Blue':7, 'White':8})
+                df['mainShape'] = df['mainShape'].replace({'Arc':1, 'Circular':2, 'Dogbone':3, 'Modern':4, 'Modern Tall':5, 'Rectangular Box':6, 'Rectangular Thin':7, 'Rectangular Wide':8, 'Square Box':9, 'Square Thin':10})
+                df['Connectivity'] = df['Connectivity'].replace({'Wired':0, 'Wireless':1, 'RF Switch':2})
+                df['Class Type'] = df['Class Type'].replace({'Console':1, 'Joystick':2, 'Handheld':3})
+                return df
+        
+            # Read CSV file into a dataframe and remove the first row and column
+            url1 = "https://ericrodgers.github.io/ITS_365_Projects/KNN_Image_Feature_CSV.csv"
+            controller_pd = pd.read_csv(open_url(url1))
+
+            # Preprocess the data 
+            controller_pd = preprocess_data(controller_pd)
+
+            # Convert DataFrame to NumPy array
+            controller_np = controller_pd.to_numpy()
+
+            np.random.shuffle(controller_np)
+
+            X_train   = controller_np[1:44, 1:-1]
+            y_train   = controller_np[1:44,  -1]
+            X_test    = controller_np[44:59, 1:-1]
+            y_test    = controller_np[44:59, -1]
+
+            def my_gen_function():
+                test_x = get_np_conditions_vector()
+                the_pred = predict(test_x)
+                text1 = np.array2string(test_x, precision=2, separator=',', suppress_small=True)
+                text3 = str(the_pred)
+                accum_res = "***\n" + "Predicted Class: " + text1 + "__"  + text3 + "\n"
+                Element('mpl').element.innerText =  accum_res
+        </script>
+    </section>
+    <div style="margin-top: 20px; border: 2.5px solid #4A3728; padding: 20px; text-align: center;">
+        <strong>The Prediction:</strong>
+        <p>The final number that appears after 'Generate' is clicked is the prediction:<br>
+            1: The controller is predicted to be a Console controller.<br> 
+            2: The controller is predicted to be a Joystick controller.<br>
+            3: The controller is predicted to be a Handheld controler. 
+        </p>
+    </div>
+    <div style="margin-top: 20px; border: 2.5px solid #4A3728; padding: 20px">
+        <strong>What to Enter:</strong>
+        <ul>
+            <li>Number of Buttons: Any number from 0 - 21.</li>
+            <li>Brand: The number corresponding to one of the following brands:
+                <ol>
+                    <li>Atari</li>
+                    <li>Atmark</li>
+                    <li>Colecovision</li>
+                    <li>Commodore</li>
+                    <li>Famicom</li>
+                    <li>Magnavox</li>
+                    <li>Mattel Electronics</li>
+                    <li>NEC</li>
+                    <li>Nintendo</li>
+                    <li>Ouya</li>
+                    <li>Panasonic</li>
+                    <li>Philips</li>
+                    <li>PlayStation</li>
+                    <li>RCA</li>
+                    <li>Samsung</li>
+                    <li>Sega</li>
+                    <li>SNK</li>
+                    <li>Xbox</li>
+                </ol>
+            </li>
+            <li>Number of Josyticks: A number between 0 - 2.</li>
+            <li>Handles: If yes, type '1'. If no, type '0'.</li>
+            <li>Dominant Color: The number corresponding to one of the following colors:
+                <ol>
+                    <li>Beige</li>
+                    <li>Black</li>
+                    <li>Brown</li>
+                    <li>Grey</li>
+                    <li>Purple</li>
+                    <li>Red</li>
+                    <li>Red and Blue</li>
+                    <li>White</li>
+                </ol>
+            </li>
+            <li>Main Shape: The number corresponding to one of the following 'shape types':
+                <ol>
+                    <li>Arc: Shaped like a crecent; round.</li>
+                    <li>Circular: Shaped like a circle.</li>
+                    <li>Dogbone: Rectangular controller with rounded ends, like a dog bone.</li>
+                    <li>Modern: Squarish controller with handles. Popular today with Xbox, Playstation, and Pro Controllers.</li>
+                    <li>Modern Tall: Similar to the Modern controllers, but with longer handles, and usually a thrid handle in the middle, forming an M.</li>
+                    <li>Rectangular Box: Usually reserved for consoles where the controller is built-in to the console, making it one and the same.</li>
+                    <li>Rectangular Thin: Shaped like a TV remote; held with one hand.</li>
+                    <li>Rectangular Wide: Like the Dogbone controller, but without rounded ends; held with two hands.</li>
+                    <li>Square Box: Square shaped controllers that are tall; usually associated with Atari joysticks.</li>
+                    <li>Square Thin: Square shaped controllers that are shorter and flat; gamepad-like controllers.</li>
+                </ol>
+            </li>
+            <li>Connectivity: If wired, type '0'. If wireless, type '1'. If using a special connection, type '2'.</li>
+        </ul>
+    </div>
+</body>
+</html>
+</body>
+</html>
