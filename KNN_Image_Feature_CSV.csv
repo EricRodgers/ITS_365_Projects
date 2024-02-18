@@ -1,59 +1,59 @@
 Image,numberOfButtons,Brand,numberOfJoysticks,Handles,dominantColor,mainShape,Connectivity,Class Type
-Amiga CD32,10,Commodore,0,Yes,Grey,Rectangular Wide,Wired,Console
-CD-i,8,Philips,0,No,Grey,Dogbone,Wired,Console
-Elite Controller Xbox One,13,Xbox,2,Yes,Black,Modern,Wireless,Console
-GameCube,9,Nintendo,2,Yes,Purple,Modern Tall,Wired,Console
-Home Pong Console,2,Atari,0,No,Black,Rectangular Box,Wired,Console
-Kinect,0,Xbox,0,No,Black,Rectangular Wide,Wireless,Console
-Magnavox Odyssey,2,Magnavox,0,No,White,Rectangular,RF Switch,Console
-Namco NeGcon,9,PlayStation,0,Yes,Black,Rectangular Wide,Wired,Console
-NES,8,Nintendo,0,No,Black,Rectangular Wide,Wired,Console
-NES Model 2,8,Nintendo,0,No,White,Dogbone,Wired,Console
-Nintendo 64,11,Nintendo,1,Yes,Grey,Modern Tall,Wired,Console
-Nintendo SFC,10,Nintendo,0,No,Beige,Dogbone,Wired,Console
 Nuon,12,Samsung,0,Yes,Black,Arc,Wireless,Console
-Ouya ,9,Ouya,2,Yes,Grey,Modern,Wireless,Console
-Panasonic 300,11,Panasonic,0,No,Black,Dogbone,Wired,Console
+Sega Genesis 6 Button,11,Sega,0,Yes,Black,Arc,Wired,Console
+Sega Saturn,13,Sega,0,Yes,Black,Arc,Wireless,Console
 Pippin,8,Atmark,1,Yes,White,Arc,Wired,Console
+Sega Saturn 3D,12,Sega,1,Yes,Beige,Circular,Wired,Console
+Wii Classic,15,Nintendo,2,No,White,Circular,Wired,Console
+Wii Wheel,0,Nintendo,0,No,White,Circular,Wireless,Handheld
+Nintendo SFC,10,Nintendo,0,No,Beige,Dogbone,Wired,Console
+Panasonic 300,11,Panasonic,0,No,Black,Dogbone,Wired,Console
+Neo Geo CD,6,SNK,1,No,Black,Dogbone,Wired,Joystick
+CD-i,8,Philips,0,No,Grey,Dogbone,Wired,Console
+NES Model 2,8,Nintendo,0,No,White,Dogbone,Wired,Console
 Playstation 1,12,PlayStation,0,Yes,Beige,Modern,Wireless,Console
 PS1 DualShock,13,PlayStation,2,Yes,Beige,Modern,Wired,Console
+Switch Pro Controller,16,Nintendo,2,Yes,Black,Modern,Wireless,Console
+Wii U Pro Controller,16,Nintendo,2,Yes,Black,Modern,Wireless,Console
 PS2 ,13,PlayStation,2,Yes,Black,Modern,Wired,Console
 PS3,13,PlayStation,2,Yes,Black,Modern,Wireless,Console
 PS4,15,PlayStation,2,Yes,Black,Modern,Wireless,Console
-PS5 DualSense,16,PlayStation,2,Yes,White,Modern,Wireless,Console
-PS5 DuelSense Edge,18,PlayStation,2,Yes,White,Modern,Wireless,Console
-Sega Dreamcast,9,Sega,1,Yes,Grey,Square Thin,Wired,Console
-Sega Genesis,8,Sega,0,Yes,Black,Rectangular Wide,Wired,Console
-Sega Genesis 6 Button,11,Sega,0,Yes,Black,Arc,Wired,Console
-Sega Saturn,13,Sega,0,Yes,Black,Arc,Wireless,Console
-Sega Saturn 3D,12,Sega,1,Yes,Beige,Circular,Wired,Console
-Switch Pro Controller,16,Nintendo,2,Yes,Black,Modern,Wireless,Console
-Turbo Grafx,10,NEC,0,No,Grey,Rectangular Wide,Wired,Console
-Virtual Boy,13,Nintendo,0,Yes,Black,Modern Tall,Wired,Console
-Wii Classic,15,Nintendo,2,No,White,Circular,Wired,Console
-Wii U Pro Controller,16,Nintendo,2,Yes,Black,Modern,Wireless,Console
+Elite Controller Xbox One,13,Xbox,2,Yes,Black,Modern,Wireless,Console
 Xbox 360,15,Xbox,2,Yes,Black,Modern,Wireless,Console
 Xbox Duke,12,Xbox,2,Yes,Black,Modern,Wired,Console
 Xbox One ,15,Xbox,2,Yes,Black,Modern,Wireless,Console
-Famicom,8,Famicom,0,No,Red,Rectangular Wide,Wired,Handheld
-Game and Watch,8,Nintendo,0,No,White,Square Thin,Wireless,Handheld
+Ouya ,9,Ouya,2,Yes,Grey,Modern,Wireless,Console
+NES MAX,6,Nintendo,1,Yes,White,Modern,Wired,Joystick
+PS5 DualSense,16,PlayStation,2,Yes,White,Modern,Wireless,Console
+PS5 DuelSense Edge,18,PlayStation,2,Yes,White,Modern,Wireless,Console
+Virtual Boy,13,Nintendo,0,Yes,Black,Modern Tall,Wired,Console
+Nintendo 64,11,Nintendo,1,Yes,Grey,Modern Tall,Wired,Console
+GameCube,9,Nintendo,2,Yes,Purple,Modern Tall,Wired,Console
+Magnavox Odyssey,2,Magnavox,0,No,White,Rectangular Box,RF Switch,Console
+Home Pong Console,2,Atari,0,No,Black,Rectangular Box,Wired,Console
+Atari 5200,17,Atari,1,No,Black,Rectangular Thin,Wired,Joystick
+Pro Line,2,Atari,1,No,Black,Rectangular Thin,Wired,Joystick
+Colecovision,14,Colecovision,1,No,Black,Rectangular Thin,Wired,Joystick
+Playstation Move,6,PlayStation,0,No,Black,Rectangular Thin,Wireless,Handheld
 Intellivision ,16,Mattel Electronics,0,No,Brown,Rectangular Thin,Wired,Handheld
 Joy Cons,12,Nintendo,2,No,Red/Blue,Rectangular Thin,Wireless,Handheld
-Playstation Move,6,PlayStation,0,No,Black,Rectangular Thin,Wireless,Handheld
+Wiimote,12,Nintendo,0,No,White,Rectangular Thin,Wireless,Handheld
 RCA Studio II,20,RCA,0,No,Beige,Rectangular Wide,Wired,Handheld
+NES,8,Nintendo,0,No,Black,Rectangular Wide,Wired,Console
+Namco NeGcon,9,PlayStation,0,Yes,Black,Rectangular Wide,Wired,Console
+Sega Genesis,8,Sega,0,Yes,Black,Rectangular Wide,Wired,Console
+Master System,2,Sega,1,No,Black,Rectangular Wide,Wired,Joystick
+Kinect,0,Xbox,0,No,Black,Rectangular Wide,Wireless,Console
+Amiga CD32,10,Commodore,0,Yes,Grey,Rectangular Wide,Wired,Console
+Turbo Grafx,10,NEC,0,No,Grey,Rectangular Wide,Wired,Console
+Famicom,8,Famicom,0,No,Red,Rectangular Wide,Wired,Handheld
+Commodore 64 Joystick,1,Commodore,1,No,Beige,Square Box,Wired,Joystick
+Atari 2600,1,Atari,1,No,Black,Square Box,Wired,Joystick
+Commodore 64GS,1,Commodore,1,No,White,Square Box,Wired,Joystick
+NES Advantage,10,Nintendo,1,No,Beige,Square Thin,Wired,Joystick
+Neo Geo,6,SNK,1,No,Black,Square Thin,Wired,Joystick
+Atari Jaguar,21,Atari,0,No,Grey,Square Thin,Wired,Joystick
+Sega Dreamcast,9,Sega,1,Yes,Grey,Square Thin,Wired,Console
+Game and Watch,8,Nintendo,0,No,White,Square Thin,Wireless,Handheld
 Wii Balance Board,0,Nintendo,0,No,White,Square Thin,Wireless,Handheld
 Wii U Gamepad,14,Nintendo,2,No,White,Square Thin,Wireless,Handheld
-Wii Wheel,0,Nintendo,0,No,White,Circular,Wireless,Handheld
-Wiimote,12,Nintendo,0,No,White,Rectangular Thin,Wireless,Handheld
-Atari 2600,1,Atari,1,No,Black,Square Box,Wired,Joystick
-Atari 5200,17,Atari,1,No,Black,Rectangular Thin,Wired,Joystick
-Atari Jaguar,21,Atari,0,No,Grey,Square Thin,Wired,Joystick
-Colecovision,14,Colecovision,1,No,Black,Rectangular Thin,Wired,Joystick
-Commodore 64 Joystick,1,Commodore,1,No,Beige,Square Box,Wired,Joystick
-Commodore 64GS,1,Commodore,1,No,White,Square Box,Wired,Joystick
-Master System,2,Sega,1,No,Black,Rectangular Wide,Wired,Joystick
-Neo Geo,6,SNK,1,No,Black,Square Thin,Wired,Joystick
-Neo Geo CD,6,SNK,1,No,Black,Dogbone,Wired,Joystick
-NES Advantage,10,Nintendo,1,No,Beige,Square Thin,Wired,Joystick
-NES MAX,6,Nintendo,1,Yes,White,Modern,Wired,Joystick
-Pro Line,2,Atari,1,No,Black,Rectangular Thin,Wired,Joystick
