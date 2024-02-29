@@ -7,47 +7,38 @@
         <script defer src="https://pyscript.net/latest/pyscript.js"></script>
         <link rel="stylesheet" href="./assets/css/examples.css" />
     </head>
-    <body>
-        <nav class="navbar" style="background-color: #000000">
-            <div class="app-header">
-                <a href="">
-                    <img src="./logo.png" class="logo" />
-                </a>
-                <a class="title" href="" style="color: #f0ab3c">KNN avg Generator</a>
-            </div>
-        </nav>
-        <div>Type conditions here: </div>  
+    <body style="background-color: #FFFDD3;">
+        <div style="text-align: center; margin-bottom: 50px;">
+        <h1>Mini Project 1: KNN</h1>
+        <p>In this Mini Project, I have chosen 100 different images of Pokemon Species. I extracted the data from the images and separated them into features.<br>
+            Using the KNN algorithm, by entering values into the following textboxes, an image of a (new) Pokemon will be generated.
+        </p>
+        </div>
+        <div><strong>Type features for your Pokemon and then press the button (view the guide below for help):</strong></div>  
  <table>
   <tr>
-     <td> Ng </td>
-     <td> <input type="text" style="border:3px solid #F7730E;" value="0" id="testInput1"/> </td>
-       <td> Pci </td>
-     <td>   <input type="text" style="border:3px solid #F7730E;" value="175" id="testInput2"/> </td>
-       <td> H </td>
-     <td>  <input type="text" style="border:3px solid #F7730E;" value="0" id="testInput3"/> </td>
-       <td> Wp </td>
-     <td>   <input type="text" style="border:3px solid #F7730E;" value="0" id="testInput4"/> </td>
-       <td> Ph</td>
-     <td>       <input type="text" style="border:3px solid #F7730E;" value="300" id="testInput5"/>  </td>
+     <td> Type 1 </td>
+     <td> <input type="text" style="border:3px solid #F7730E;" value="" id="testInput1"/> </td>
+       <td> Type 2 </td>
+     <td>   <input type="text" style="border:3px solid #F7730E;" value="" id="testInput2"/> </td>
+       <td> Shape </td>
+     <td>  <input type="text" style="border:3px solid #F7730E;" value="" id="testInput3"/> </td>
+       <td> Stage </td>
+     <td>   <input type="text" style="border:3px solid #F7730E;" value="" id="testInput4"/> </td>
+       <td> Generation </td>
+     <td>       <input type="text" style="border:3px solid #F7730E;" value="" id="testInput5"/>  </td>
   </tr>    
- </table> 
-
-       
-         <button id="get-time" py-click="my_gen_function()"  class="py-button">Generate</button>
-                                    
-        <p id="current-val"></p>
-  
-        <div id="test-output"></div>
-
-        <div id="pandas-output"></div>
+ </table>
+         <button id="get-time" py-click="my_gen_function()"  class="py-button">Generate</button>                          
+         <p id="current-val"></p>
+         <div id="test-output"></div>
+         <div id="pandas-output"></div>
 
         
 
-        <section class="pyscript"> 
-            <div id="mpl"></div>
-
-                
-                <py-config>
+         <section class="pyscript"> 
+            <div id="mpl"></div>         
+                   <py-config>
                     packages = [
                       "matplotlib",
                       "pandas",
@@ -56,10 +47,6 @@
                       "https://pyscript.net/latest/plugins/python/py_tutor.py"
                     ]
                 </py-config>
-
-
-                
-
                 <script type="py">
 
                     
@@ -172,10 +159,12 @@
                         ## display(fig, target="mpl")
    
                 </script>
-         
         </section>
-
-
-        
+        <div style="margin-top: 20px; border: 2.5px solid #4A3728; padding: 20px; text-align: center;">
+        <strong>What to Enter:</strong>
+        <p>
+            <b>Type 1 and Type 2: </b> Enter a number corresponding to the Pokemon's type.
+        </p>
+    </div>
     </body>
 </html>
