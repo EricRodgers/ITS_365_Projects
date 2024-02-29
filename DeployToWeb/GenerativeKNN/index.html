@@ -1,48 +1,61 @@
 <html>
-  <head>
-    <title>Generative KNN - Gen Pokemon</title>
-    <meta charset="utf-8"/>
-    <link rel="icon" type="image/x-icon" href="./favicon.png"/>
-    <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css"/>
-    <script defer src="https://pyscript.net/latest/pyscript.js"></script>
-    <link rel="stylesheet" href=".assets/css/examples.css"/>
-  </head>
-  <body>
-    <nav class="navbar" style="background-color: #000000">
-      <div class="app-header">
-        <a href="">
-          <img src="./logo.png" class="logo"/>
-        </a>
-        <a class="title" href="" style="color: #f0ab3c">KNN Avg Generator</a>
-      </div>
-    </nav>
-    <div><strong>Type your features:</strong></div>
-    <table>
-        <tr>
-            <td>Number of Buttons</td>
-            <td><input type="text" style="border: 3px solid #4A3728;" value="" id="testInput1"/></td>
-            <td>Brand</td>
-            <td><input type="text" style="border: 3px solid #4A3728;" value="" id="testInput2"/></td>
-            <td>Number of Joysticks</td>
-            <td><input type="text" style="border: 3px solid #4A3728;" value="" id="testInput3"/></td>
-            <td>Handles</td>
-            <td><input type="text" style="border: 3px solid #4A3728;" value="" id="testInput4"/></td>
-        </tr>
-        <tr>
-            <td>Dominant Color</td>
-            <td><input type="text" style="border: 3px solid #4A3728;" value="" id="testInput5"/></td>
-            <td>Main Shape</td>
-            <td><input type="text" style="border: 3px solid #4A3728;" value="" id="testInput6"/></td>
-            <td>Connectivity</td>
-            <td><input type="text" style="border: 3px solid #4A3728;" value="" id="testInput7"/></td>
-        </tr>
-    </table>
-            <button id="get-time" py-click="my_gen_function()" class="py-button">Generate</button>
-            <p id="current-val"></p>
-            <div id="test-output"></div>
-            <div id="pandas-output"></div>
+    <head>
+        <title>KNN Generation Pokemon</title>
+        <meta charset="utf-8" />
+        <link rel="icon" type="image/x-icon" href="./favicon.png" />
+        <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css"/>
+        <script defer src="https://pyscript.net/latest/pyscript.js"></script>
+        <link rel="stylesheet" href="./assets/css/examples.css" />
+    </head>
+    <body>
+        <nav class="navbar" style="background-color: #000000">
+            <div class="app-header">
+                <a href="">
+                    <img src="./logo.png" class="logo" />
+                </a>
+                <a class="title" href="" style="color: #f0ab3c">KNN avg Generator</a>
+            </div>
+        </nav>
+        <div>Type conditions here: </div>  
+ <table>
+  <tr>
+     <td> Ng </td>
+     <td> <input type="text" style="border:3px solid #F7730E;" value="0" id="testInput1"/> </td>
+       <td> Pci </td>
+     <td>   <input type="text" style="border:3px solid #F7730E;" value="175" id="testInput2"/> </td>
+       <td> H </td>
+     <td>  <input type="text" style="border:3px solid #F7730E;" value="0" id="testInput3"/> </td>
+       <td> Wp </td>
+     <td>   <input type="text" style="border:3px solid #F7730E;" value="0" id="testInput4"/> </td>
+       <td> Ph</td>
+     <td>       <input type="text" style="border:3px solid #F7730E;" value="300" id="testInput5"/>  </td>
+  </tr>    
+  <tr>
+     <td> Ox </td>
+     <td>  <input type="text" style="border:3px solid #F7730E;" value="24" id="testInput6"/> </td>
+     <td>Ow</td>
+     <td>    <input type="text" style="border:3px solid #F7730E;" value="7" id="testInput7"/> </td>
+     <td> Hbt</td>
+     <td>     <input type="text" style="border:3px solid #F7730E;" value="1459" id="testInput8"/> </td>
+     <td> Wm</td>
+     <td>  <input type="text" style="border:3px solid #F7730E;" value="12" id="testInput9"/> </td>
+    <td> Wr</td>
+     <td>     <input type="text" style="border:3px solid #F7730E;" value="308750" id="testInput10"/>  </td>
+  </tr> 
+ </table> 
 
-           <section class="pyscript"> 
+       
+         <button id="get-time" py-click="my_gen_function()"  class="py-button">Generate</button>
+                                    
+        <p id="current-val"></p>
+  
+        <div id="test-output"></div>
+
+        <div id="pandas-output"></div>
+
+        
+
+        <section class="pyscript"> 
             <div id="mpl"></div>
 
                 
@@ -55,8 +68,13 @@
                       "https://pyscript.net/latest/plugins/python/py_tutor.py"
                     ]
                 </py-config>
-             
+
+
+                
+
                 <script type="py">
+
+                    
                     import matplotlib.pyplot as plt
                     import matplotlib.tri as tri
                     import numpy as np
@@ -129,7 +147,7 @@
                     ##################################################
 
                     def my_gen_function():
-                  
+                    
                         test_x = get_np_conditions_vector()
 
                         #####################################################
@@ -140,9 +158,9 @@
                         text = text1 + text2 + text3 + text4
                         Element('test-output').element.innerText =  text   
                         #####################################################
-                      
+                        
                         generated_img = predict( test_x )
-                  
+                    
                         #####################################################          
                         test_x = test_x.astype(int)
                         str_conditions = np.array2string(test_x, precision=0, separator=',', suppress_small=True)
@@ -170,7 +188,10 @@
                         ## display(fig, target="mpl")
    
                 </script>
-            </section>
+         
+        </section>
 
-  </body>
+
+        
+    </body>
 </html>
