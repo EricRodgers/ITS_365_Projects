@@ -66,7 +66,7 @@ async function runExample() {
       <table>
         <tr>
           <td> Rating of Phishing Classification </td>
-          <td id = "td0"> ${outputData.data[0].toFixed{2}} </td>
+          <td id = "td0"> ${outputData.data[0].toFixed(2)} </td>
         </tr>
 
       </table>
