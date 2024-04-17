@@ -58,7 +58,7 @@ async function runExample() {
 
       await session.loadModel("DLnet_PhishingData.onnx");
       let outputMap = await session.run([tensorX]);
-      let outputData = outputMap.get("output1);
+      let outputData = outputMap.get("output1");
 
                                      
       let predictions = document.getElementById("predictions");
